@@ -1,1 +1,181 @@
 /* Estilos principales del proyecto */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    }
+        
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    }
+        
+.contenedor {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 95%;
+    max-width: 600px;
+    text-align: center;
+    }
+        
+.pantalla {
+    display: none;
+    }
+        
+.activo {
+    display: block;
+    }
+        
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2em;
+    }
+        
+p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-size: 1.1em;
+    }
+        
+.pregunta {
+    font-size: 1.3em;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: bold;
+    }
+        
+.opciones {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 30px;
+    }
+        
+.opcion {
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1em;
+    }
+        
+.opcion:hover {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+    transform: translateY(-2px);
+    }
+        
+.boton {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    }
+        
+.boton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+        
+.boton:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    }
+        
+.progreso {
+    margin-top: 20px;
+    color: #666;
+    font-size: 0.9em;
+    }
+
+.terminos {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.terminos h2 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.terminos ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.terminos li {
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.consentimiento {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.consentimiento input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.consentimiento label {
+    cursor: pointer;
+    color: #333;
+}
+
+.terminos-acordeon {
+    margin: 20px 0;
+}
+
+.acordeon-btn {
+    width: 100%;
+    padding: 15px;
+    background: #f8f9fa;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.acordeon-btn:hover {
+    background: #e9ecef;
+}
+
+.terminos-contenido {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.terminos-contenido.activo {
+    max-height: 1000px; /* Ajusta este valor según el contenido */
+    transition: max-height 0.5s ease-in;
+}

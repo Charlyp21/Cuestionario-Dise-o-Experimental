@@ -3,9 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Neurociencias UNAM</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+    <div class="contenedor">
+        <div id="bienvenida" class="pantalla activo">
+            <h1>Impacto psicológico de la experimentación animal</h1>
+            <p>Bienvenido al cuestionario para evaluar el impacto psicologico de la experimentación animal. Por favor, responde las siguientes preguntas de manera honesta.</p>
+            <p>Los datos recopilados serán utilizados únicamente con fines académicos y de investigación. Este trabajo pertenece al proyecto final de la materia de diseño experimental para la licenciatura en Neurociencias.</p>
+            <p>Antes de comenzar, lee y acepta los terminos de participación.</p>
+
+            <div class="terminos-acordeon">
+                <button class="acordeon-btn">Términos de Participación</button>
+                <div class="terminos-contenido">
+                    <div class="terminos">
+                        <h2>Consentimiento Informado</h2>
+                        <p>Acepto participar como sujeto en la investigación antes mencionada. Comprendo el concepto de esta investigación. Toda la información obtenida del estudio será codificada para proteger la identidad de cada sujeto. No se utilizarán nombres ni otra información de identificación al discutir o reportar los datos. También entiendo que mis respuestas pueden ser incluidas en el artículo y la presentación, y que mi identidad se mantendrá confidencial, sin incluirse información que pueda identificarme. Comprendo que los riesgos para mí son mínimos.</p>
+                        <p>No habrá compensación de ningún tipo por mi participación. Entiendo que mi participación en este proyecto es completamente voluntaria y que mi elección de participar o no en este proyecto es libre. Así mismo, soy libre de retirarme en cualquier momento, antes o durante el procedimiento de la investigación.</p>
+                    </div>
+                    <div class="consentimiento">
+                        <input type="checkbox" id="aceptoTerminos">
+                        <label for="aceptoTerminos">He leído y acepto los términos de participación</label>
+                    </div>
+                </div>
+            </div>
+
+            <button class="boton" id="btnComenzar" onclick="empezarCuestionario()" disabled>Comenzar</button>
+        </div>
+    <!-- Divisores para las preguntas -->
+
+        <div class="pantalla" id="pregunta1">
+            <div class="pregunta">1. ¿Realizaste algún procedimiento directamente en animales vivos durante tus estudios?</div>
+            <div class="opciones">
+                <div class="opcion" onclick="seleccionarOpcion(1, 'a', event)">A) Sí</div>
+                <div class="opcion" onclick="seleccionarOpcion(1, 'b', event)">B) No</div>
+                <div class="opcion" onclick="seleccionarOpcion(1, 'c', event)">C) No estoy seguro</div>
+            </div>
+            <button class="boton" onclick="siguientePregunta(1)" disabled id="btn1">Siguiente</button>
+            <div class="progreso">Pregunta 1 de 3</div>
+        </div>
+
+        <div id="pregunta2" class="pantalla">
+            <div class="pregunta">2. Si has realizado procedimientos científicos en animales durante tu período de estudios, ¿qué sentimientos has experimentado? Por favor, indica todas las respuestas que sean verdaderas en tu caso.</div>
+            <div class="opciones">
+                <div class="opcion" onclick="seleccionarOpcion(2, 'a', event)">A) Fascinación</div>
+                <div class="opcion" onclick="seleccionarOpcion(2, 'b', event)">B) Curiosidad</div>
+                <div class="opcion" onclick="seleccionarOpcion(2, 'c', event)">C) Renuencia a hacer el ejercicio</div>
+                <div class="opcion" onclick="seleccionarOpcion(2, 'd', event)">D) Compasión por los animales</div>
+                <div class="opcion" onclick="seleccionarOpcion(2, 'e', event)">E) Indiferencia</div>
+            </div>
+            <button class="boton" onclick="siguientePregunta(2)" disabled id="btn2">Siguiente</button>
+            <div class="progreso">Pregunta 2 de 3</div>
+        </div>
+
+        <div id="pregunta3" class="pantalla">
+            <div class="pregunta">3. ¿Has intentado evitar realizar procedimientos con animales durante tu período de estudios? Si es así, ¿cómo lo hiciste?</div>
+            <div class="opciones">
+                <div class="opcion" onclick="seleccionarOpcion(3, 'a', event)">A) Ausencia planificada de clases</div>
+                <div class="opcion" onclick="seleccionarOpcion(3, 'b', event)">B) Intercambio con otra persona</div>
+                <div class="opcion" onclick="seleccionarOpcion(3, 'c', event)">C) Negación a realizar el ejercicio</div>
+                <div class="opcion" onclick="seleccionarOpcion(3, 'd', event)">D) Realizar otra tarea "a cambio"</div>
+                <div class="opcion" onclick="seleccionarOpcion(3, 'e', event)">E) No he intentado evitarlo</div>
+            </div>
+            <button class="boton" onclick="finalizarCuestionario()" disabled id="btn3">Finalizar</button>
+            <div class="progreso">Pregunta 3 de 3</div>
+        </div>
+
+    <!-- Pantalla de Resultados -->
+        <div id="resultados" class="pantalla">
+            <h1>¡Cuestionario Completado! 🎉</h1>
+            <p id="mensajeFinal">¡Gracias por tu participación!</p>
+            <button class="boton" onclick="reiniciarCuestionario()">Intentar de nuevo</button>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
